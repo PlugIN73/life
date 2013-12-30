@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+      fields = new Array();
+      fields_next = new Array();
+      for(i=0; i < 100;i++) {
+        fields[i] = new Array();
+        fields_next[i] = new Array();
+        for(j=0;j<10;j++) {
+          fields[i][j] = 0;
+          fields_next[i][j] = 0;
+        }
+      }
+
+      fields[49][51] = 1;
+      fields[50][51] = 1;
+      fields[51][51] = 1;
+      fields[51][50] = 1;
+      fields[50][49] = 1;
+
+
+      function life() {
+       
+        for(i=0; i < 100;i++) {
+
+          for(j=0; j < 100;j++) {
+            count = 0;
+            if (fields[i][j + 1] == 1) count++;
+            if (fields[i][j - 1] == 1) count++;
+            if (fields[i + 1][j] == 1) count++;
+            if (fields[i - 1][j + 1] == 1) count++;
+            if (fields[i - 1][j - 1] == 1) count++;
+            if (fields[i + 1][j - 1] == 1) count++;
+            if (fields[i + 1][j - 1] == 1) count++;
+
+            current = fields[i][j]
+            if (current == 0 && count ==3) {
+              fields_next
+            }
+
+          }
+        }
+
+      }
+    </script>
+  </head>
+</html>
